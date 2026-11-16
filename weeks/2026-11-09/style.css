@@ -1,0 +1,133 @@
+:root {
+  color-scheme: light;
+  --ink: #241f18;
+  --paper: #f9efd5;
+  --cabinet: #26463d;
+  --drawer: #d9caa5;
+  --hardware: #856632;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: clamp(1rem, 5vw, 4rem);
+  background: var(--paper);
+  color: var(--ink);
+  font: 1rem/1.55 "Courier New", monospace;
+}
+
+.office {
+  max-inline-size: 35rem;
+  margin: auto;
+}
+
+.back {
+  color: inherit;
+  text-underline-offset: 0.25em;
+}
+
+h1 {
+  margin: 2.25rem 0 0;
+  font: 700 clamp(4rem, 14vw, 8rem)/0.77 Georgia, serif;
+  letter-spacing: -0.09em;
+}
+
+h1 i {
+  color: var(--cabinet);
+  font-weight: 400;
+}
+
+header p {
+  margin: 1.5rem 0 0;
+}
+
+section {
+  margin-block: 2rem;
+  padding: clamp(0.75rem, 4vw, 1.5rem);
+  border: 2px solid var(--ink);
+  border-radius: 0.45rem;
+  background: var(--cabinet);
+  box-shadow: 0.35rem 0.4rem 0 var(--ink);
+}
+
+h2 {
+  margin: 0.25rem 0 1rem;
+  color: var(--paper);
+  font-size: 1rem;
+}
+
+details + details {
+  margin-top: 0.65rem;
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-block-size: 3.5rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--ink);
+  border-radius: 0.2rem;
+  background: var(--drawer);
+  cursor: pointer;
+  font-weight: 700;
+  list-style: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary:hover,
+details[open] summary {
+  background: #e9dcbf;
+}
+
+a:focus-visible,
+summary:focus-visible {
+  outline: 2px dashed currentColor;
+  outline-offset: 4px;
+}
+
+summary:focus-visible {
+  outline-color: var(--paper);
+}
+
+.handle {
+  display: grid;
+  flex: 0 0 1.75rem;
+  block-size: 1.25rem;
+  place-items: center;
+  border: 2px solid var(--hardware);
+  border-radius: 0.2rem;
+  background: var(--paper);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.handle::before {
+  content: "+";
+}
+
+details[open] .handle::before {
+  content: "−";
+}
+
+.ticket {
+  margin: 0 0.35rem 0.9rem;
+  padding: 1rem;
+  border-bottom: 2px dashed var(--hardware);
+  background: var(--paper);
+}
+
+.ticket p {
+  margin: 0;
+}
+
+.ticket p + p {
+  margin-top: 0.6rem;
+}
