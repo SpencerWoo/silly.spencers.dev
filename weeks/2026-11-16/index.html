@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A website for a doorstop. Try to close the door.">
+  <title>The Doorstop · silly.spencers.dev</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <a class="back" href="../../#prompt-heading">← This week’s prompt</a>
+
+    <div class="exhibit">
+      <header>
+        <h1>The<br>Doorstop</h1>
+        <p>A website for a small rubber wedge.</p>
+      </header>
+
+      <label class="control">
+        <input type="checkbox">
+        Try to close the door
+      </label>
+
+      <p class="result">
+        <span class="ready">The door is open.</span>
+        <span class="stopped">Still open. The doorstop has done its job.</span>
+      </p>
+
+      <div class="scene" aria-hidden="true">
+        <div class="floor"></div>
+        <div class="frame">
+          <div class="door"><span></span></div>
+        </div>
+        <div class="wedge"></div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
