@@ -36,7 +36,7 @@ h1 {
 
 .wordmark {
   font-family: ui-monospace, "Courier New", monospace;
-  font-size: clamp(1rem, 6vw, 3rem);
+  font-size: clamp(0.75rem, 4.7vw, 2.35rem);
   letter-spacing: 0;
   line-height: 1.1;
   white-space: pre;
@@ -66,7 +66,26 @@ header a {
   margin-top: 1rem;
 }
 
-.prompt {
+.session {
+  margin-top: 1rem;
+}
+
+.session summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.session summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.session + .session {
+  padding-top: 1rem;
+  border-top: 1px dashed var(--rule);
+}
+
+.session-current {
   margin-top: 2.5rem;
   padding: clamp(1rem, 5vw, 2rem);
   border: 1px solid var(--ink);
@@ -76,6 +95,11 @@ header a {
 }
 
 .instruction {
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+
+.session-current .instruction {
   max-inline-size: 24ch;
   font-size: clamp(2rem, 6vw, 3.5rem);
   letter-spacing: -0.035em;
@@ -88,38 +112,8 @@ header a {
   border-top: 1px dashed var(--rule);
 }
 
-.archive-list {
-  margin: 1rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.archive-list li + li {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px dashed var(--rule);
-}
-
-.archive-list h3 {
-  margin: 0.35rem 0 0;
-  font: 1.65rem/1.2 Georgia, "Times New Roman", serif;
-}
-
-.archive-list p {
-  margin: 0.25rem 0 0;
-}
-
-.week,
 .credit {
   font-size: 0.875rem;
-}
-
-.prompt .week {
-  margin: 0 0 0.75rem;
-}
-
-.prompt h1 {
-  font-weight: 500;
 }
 
 .submissions {
