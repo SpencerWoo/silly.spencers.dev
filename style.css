@@ -34,6 +34,14 @@ h1 {
   overflow-wrap: anywhere;
 }
 
+.wordmark {
+  font-family: ui-monospace, "Courier New", monospace;
+  font-size: clamp(1rem, 6vw, 3rem);
+  letter-spacing: 0;
+  line-height: 1.1;
+  white-space: pre;
+}
+
 h2 {
   margin: 0;
   font-size: 1rem;
