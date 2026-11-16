@@ -1,0 +1,86 @@
+:root {
+  color-scheme: light;
+  --paper: #fbf8ee;
+  --ink: #25233a;
+  --link: #44359b;
+  --rule: #b8b1cd;
+  --highlight: #f9e899;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-inline-size: 48rem;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 5vw, 3.5rem) clamp(1rem, 5vw, 2.5rem) 2rem;
+  background: var(--paper);
+  color: var(--ink);
+  font: 1.0625rem/1.55 ui-monospace, "Courier New", monospace;
+}
+
+h1,
+.instruction {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.25rem, 8vw, 5rem);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+p {
+  margin: 0.75rem 0 0;
+}
+
+a {
+  color: var(--link);
+  text-underline-offset: 0.2em;
+}
+
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+header a {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+.prompt {
+  margin-top: 2.5rem;
+  padding: clamp(1rem, 5vw, 2rem);
+  border: 1px solid var(--ink);
+  border-radius: 0.25rem;
+  background: var(--highlight);
+  box-shadow: 0.3rem 0.3rem 0 var(--ink);
+}
+
+.instruction {
+  max-inline-size: 24ch;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  letter-spacing: -0.035em;
+  line-height: 1.07;
+}
+
+.archive,
+footer {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--rule);
+}
+
+footer {
+  font-size: 0.875rem;
+}
