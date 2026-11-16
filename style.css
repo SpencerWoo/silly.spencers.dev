@@ -74,15 +74,10 @@ header a {
   line-height: 1.07;
 }
 
-.archive,
-footer {
+.archive {
   margin-top: 2.5rem;
   padding-top: 1rem;
   border-top: 1px dashed var(--rule);
-}
-
-footer {
-  font-size: 0.875rem;
 }
 
 .archive-list {
@@ -98,7 +93,7 @@ footer {
 }
 
 .archive-list h3 {
-  margin: 0.15rem 0 0;
+  margin: 0.35rem 0 0;
   font: 1.65rem/1.2 Georgia, "Times New Roman", serif;
 }
 
@@ -106,6 +101,24 @@ footer {
   margin: 0.25rem 0 0;
 }
 
-.archive-list .week {
+.week,
+.credit {
   font-size: 0.875rem;
+}
+
+.prompt .week {
+  margin: 0 0 0.75rem;
+}
+
+.prompt h1 {
+  font-weight: 500;
+}
+
+.submissions {
+  margin: 0.75rem 0 0;
+  padding-inline-start: 1.25rem;
+}
+
+.submissions li + li {
+  margin-top: 0.5rem;
 }
