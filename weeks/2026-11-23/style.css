@@ -1,0 +1,148 @@
+:root {
+  color-scheme: light;
+  --ink: #1e1b18;
+  --wall: #ece6da;
+  --plinth: #fbfaf6;
+  --crust: #b4702e;
+  --crumb: #f1d79a;
+  --rope: #8a1f2b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--wall);
+  color: var(--ink);
+  font: 1rem/1.55 "Courier New", monospace;
+}
+
+main {
+  max-inline-size: 38rem;
+  margin: 0 auto;
+  padding: clamp(1.25rem, 5vw, 3.5rem);
+}
+
+.back { color: inherit; text-underline-offset: 0.25em; }
+
+header { margin-top: 2rem; }
+
+.kicker {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.5rem 0 0;
+  font: 400 clamp(2.75rem, 10vw, 5rem)/0.9 Georgia, serif;
+  letter-spacing: -0.05em;
+}
+
+.case {
+  margin: 2.5rem 0 0;
+}
+
+.plinth {
+  position: relative;
+  display: grid;
+  place-items: center;
+  block-size: 16rem;
+  border: 2px solid var(--ink);
+  background:
+    radial-gradient(circle at 50% 0, rgb(255 255 255 / 0.9), transparent 60%),
+    var(--plinth);
+  box-shadow: 0.4rem 0.4rem var(--ink);
+}
+
+.plinth::after {
+  position: absolute;
+  inset: auto 10% 1.5rem;
+  block-size: 0.35rem;
+  border-radius: 999px;
+  background: var(--rope);
+  content: "";
+}
+
+.crumb {
+  inline-size: 0.7rem;
+  block-size: 0.5rem;
+  border-radius: 40% 55% 35% 50%;
+  background: linear-gradient(135deg, var(--crust) 0 35%, var(--crumb) 36%);
+  box-shadow: 0 0.2rem 0.3rem rgb(0 0 0 / 0.25);
+  transition: transform 300ms ease;
+}
+
+.plaque {
+  display: grid;
+  gap: 0.15rem;
+  max-inline-size: 18rem;
+  margin: 1.25rem 0 0 auto;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--ink);
+  background: var(--plinth);
+  font-size: 0.85rem;
+}
+
+.plaque strong { font: 700 1.1rem Georgia, serif; }
+
+.guide {
+  margin-top: 1.5rem;
+  border: 2px solid var(--ink);
+  background: var(--plinth);
+}
+
+.guide summary {
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.guide p {
+  margin: 0;
+  padding: 0 0.9rem 0.9rem;
+  font: italic 1.05rem/1.5 Georgia, serif;
+}
+
+.touch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+  padding: 0.5rem 0.85rem;
+  border: 2px solid var(--ink);
+  background: var(--crumb);
+  box-shadow: 0.2rem 0.2rem var(--ink);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.touch input { accent-color: var(--ink); }
+
+.guard { margin: 0.75rem 0 0; }
+.guard .no { display: none; color: var(--rope); font-weight: 700; }
+main:has(.touch input:checked) .guard .ok { display: none; }
+main:has(.touch input:checked) .guard .no { display: inline; }
+main:has(.touch input:checked) .crumb { transform: rotate(25deg) scale(0.9); }
+
+.shop {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--ink);
+}
+
+.shop h2 { margin: 0 0 0.5rem; font: 700 1.2rem Georgia, serif; }
+.shop ul { margin: 0; padding: 0; list-style: none; }
+.shop li { display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px dotted var(--ink); }
+
+summary:focus-visible,
+.touch:focus-within,
+.back:focus-visible {
+  outline: 2px dashed currentColor;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crumb { transition: none; }
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A waiting room for nothing in particular. Take a number.">
+  <title>The Waiting Room · silly.spencers.dev</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <div>created as part of <a class="back" href="https://silly.spencers.dev">https://silly.spencers.dev</a> project for week <time datetime="2026-10-19">october 19</time>–<time datetime="2026-10-25">25, 2026</time></div>
+
+    <header>
+      <h1>The Waiting Room</h1>
+      <p>For nothing in particular. Please have a seat.</p>
+    </header>
+
+    <section class="board" aria-live="polite">
+      <p class="label">now serving</p>
+      <p class="serving" id="serving">041</p>
+    </section>
+
+    <section class="desk">
+      <button type="button" id="take">Take a number</button>
+      <p class="ticket" id="ticket" hidden>Your number is <strong id="mine"></strong>.<br><span id="ahead"></span></p>
+    </section>
+
+    <ul class="notices">
+      <li>Magazines are from 2009. Please return them to 2009.</li>
+      <li>The plant is real. It is also waiting.</li>
+      <li>If your number is called, you were not paying attention.</li>
+    </ul>
+  </main>
+  <script>
+    const servingEl = document.getElementById("serving");
+    const ticketEl = document.getElementById("ticket");
+    const mineEl = document.getElementById("mine");
+    const aheadEl = document.getElementById("ahead");
+    const pad = (n) => String(n).padStart(3, "0");
+    let serving = 41;
+    let mine = null;
+
+    function update() {
+      servingEl.textContent = pad(serving);
+      if (mine === null) return;
+      const gap = mine - serving;
+      aheadEl.textContent = gap > 1 ? `${gap - 1} people ahead of you. Probably.`
+        : gap === 1 ? "You’re next. Any minute now." : "";
+    }
+
+    document.getElementById("take").addEventListener("click", () => {
+      mine = serving + 7 + Math.floor(Math.random() * 6);
+      mineEl.textContent = pad(mine);
+      ticketEl.hidden = false;
+      update();
+    });
+
+    setInterval(() => {
+      // the line moves, but never quite to you
+      if (mine !== null && mine - serving <= 1) {
+        mine += 1 + Math.floor(Math.random() * 3);
+        mineEl.textContent = pad(mine);
+        aheadEl.textContent = "Someone with an appointment went ahead. Sorry.";
+        return;
+      }
+      serving += 1;
+      update();
+    }, 6000);
+  </script>
+</body>
+</html>

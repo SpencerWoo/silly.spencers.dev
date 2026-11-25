@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A weather report for the rooms of one apartment.">
+  <title>Indoor Forecast · silly.spencers.dev</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <div>created as part of <a class="back" href="https://silly.spencers.dev">https://silly.spencers.dev</a> project for week <time datetime="2026-11-02">november 2</time>–<time datetime="2026-11-08">8, 2026</time></div>
+
+    <header>
+      <h1>Indoor<br>Forecast</h1>
+      <p>Local conditions for one apartment.</p>
+    </header>
+
+    <div class="station">
+      <fieldset class="rooms">
+        <legend>Pick a room</legend>
+        <label><input type="radio" name="room" value="kitchen" checked> Kitchen</label>
+        <label><input type="radio" name="room" value="bedroom"> Bedroom</label>
+        <label><input type="radio" name="room" value="bathroom"> Bathroom</label>
+      </fieldset>
+
+      <article class="report" data-room="kitchen">
+        <p class="icon" aria-hidden="true">☁︎</p>
+        <p class="temp">74°</p>
+        <h2>Kitchen</h2>
+        <p>Toast fog until 8 a.m., clearing once a window is opened. Scattered crumbs near the counter. 90% chance of the smoke alarm going off when someone sears anything.</p>
+      </article>
+
+      <article class="report" data-room="bedroom">
+        <p class="icon" aria-hidden="true">☾</p>
+        <p class="temp">66°</p>
+        <h2>Bedroom</h2>
+        <p>Calm and dim. A blanket front moves in after 11 p.m., with a cold toe advisory along the edge of the bed. Laundry accumulation on the chair: 2–4 inches.</p>
+      </article>
+
+      <article class="report" data-room="bathroom">
+        <p class="icon" aria-hidden="true">♨︎</p>
+        <p class="temp">81°</p>
+        <h2>Bathroom</h2>
+        <p>Dense fog after showers. Mirror visibility near zero. Expect a brief cold snap when the door opens.</p>
+      </article>
+    </div>
+  </main>
+</body>
+</html>
